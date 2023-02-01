@@ -1,8 +1,7 @@
 {
-  "name": "Itinerary Planner",
-  "version": "1.2.7",
-  "homepage": "https://lydialawli.github.io/itinerary-planner-ly",
-  "description": "a simple React app that sorts/distributes containers (tapper wares) from/to stores to bike stock",
+  "name": "Draw from three words",
+  "version": "1.0.0",
+  "description": "each day this page will give you 3 random words and a timer so you can draw and share your masterpiece.",
   "author": {
     "name": "Lydia",
     "email": "lydialawli@gmail.com"
@@ -16,7 +15,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/lydialawli/itinerary-planner-ly"
+    "url": "https://github.com/lydialawli/draw-from-3-words"
   },
   "dependencies": {
     "@emotion/react": "latest",
@@ -33,7 +32,6 @@
     "react-redux": "^7.2.6",
     "react-router-dom": "latest",
     "react-scripts": "latest",
-    "typescript": "latest",
     "validate.js": "latest",
     "web-vitals": "latest"
   },
@@ -46,8 +44,17 @@
     "@types/react": "latest",
     "@types/react-dom": "latest",
     "@types/react-router-dom": "latest",
+    "@typescript-eslint/eslint-plugin": "^5.50.0",
+    "@typescript-eslint/parser": "^5.50.0",
+    "eslint": "^8.33.0",
+    "eslint-config-standard-with-typescript": "^34.0.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-n": "^15.6.1",
+    "eslint-plugin-promise": "^6.1.1",
+    "eslint-plugin-react": "^7.32.2",
     "gh-pages": "^5.0.0",
-    "prettier": "latest"
+    "prettier": "latest",
+    "typescript": "^4.9.5"
   },
   "eslintConfig": {
     "extends": [
@@ -63,7 +70,8 @@
     "build": "react-scripts build",
     "type": "tsc",
     "format": "node_modules/.bin/prettier src --write",
-    "test": "react-scripts test"
+    "test": "react-scripts test",
+    "lint": "eslint src/**/*.js src/**/*.jsx"
   },
   "browserslist": {
     "production": [
