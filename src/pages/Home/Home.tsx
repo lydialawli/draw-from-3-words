@@ -1,10 +1,25 @@
-import React, { type ReactElement } from 'react'
-import { Typography, Grid, Box } from '@mui/material'
+import React, { type ReactElement, useState } from 'react'
+import { Typography, Grid, Box, Button } from '@mui/material'
 
 import { useTheme } from '@mui/material/styles'
+import axios from 'axios'
 
 const Home = (): ReactElement => {
   const theme = useTheme()
+  const [newWord, setNewWord] = useState('')
+  const getWord = async () => {
+    try {
+      await axios
+        .get('https://random-word-api.herokuapp.com/word')
+        .then(function (response) {
+          if (response.data) {
+            setNewWord(response.data)
+          }
+        })
+    } catch (err) {
+      console.log('err:', err)
+    }
+  }
 
   return (
     <Grid container spacing={theme.spacing(1)} overflow="none">
@@ -19,7 +34,20 @@ const Home = (): ReactElement => {
           <Typography variant="h2">
                         3rd WORD
           </Typography>
+
         </Grid>
+        <Button
+          size="small"
+          disableElevation
+          // className={classes.button}
+          variant="contained"
+          onClick={getWord}
+        >
+                    Generate new word
+        </Button>
+        <Typography variant="h1">
+          {newWord}
+        </Typography>
       </Box>
     </Grid>
   )

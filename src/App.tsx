@@ -1,12 +1,14 @@
 import { AppStore } from './appContext'
-import { Route, Switch, BrowserRouter, Redirect } from 'react-router-dom'
+import { Route, Switch, BrowserRouter } from 'react-router-dom'
 import { Welcome, About, Home } from './pages'
 import { PrivateLayout } from './routes/Layout'
 
+import React from 'react'
 import { ErrorBoundary } from './components'
 import { AppThemeProvider } from './theme'
 import { Provider } from 'react-redux'
 import { store } from './interactions/store'
+
 /**
  * Root Application Component
  * @class App
@@ -20,12 +22,9 @@ const App = () => {
             <BrowserRouter>
               <PrivateLayout>
                 <Switch>
-                  <Route exact path="/">
-                    <Redirect to="/dashboard" />
-                  </Route>
-                  <Route path="/welcome" component={Welcome} />
-                  <Route path="/about" component={About} />,
-                  <Route component={Home} />
+                  <Route path="/welcome" component={Welcome}/>
+                  <Route path="/about" component={About}/>,
+                  <Route exact path="/" component={Home}/>
                 </Switch>
               </PrivateLayout>
             </BrowserRouter>

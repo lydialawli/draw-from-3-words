@@ -1,5 +1,5 @@
 import { localStorageSet } from '../utils/localStorage'
-import { IAppState } from './AppStore'
+import { type IAppState } from './AppStore'
 
 /**
  * Reducer for global AppStore using "Redux styled" actions
@@ -13,26 +13,26 @@ const AppReducer: React.Reducer<IAppState, any> = (state, action) => {
     case 'CURRENT_USER':
       return {
         ...state,
-        currentUser: action?.currentUser || action?.payload,
+        currentUser: action?.currentUser || action?.payload
       }
     case 'SIGN_UP':
     case 'LOG_IN':
       return {
         ...state,
-        isAuthenticated: true,
+        isAuthenticated: true
       }
     case 'LOG_OUT':
       return {
         ...state,
         isAuthenticated: false,
-        currentUser: undefined, // Also reset previous user data
+        currentUser: undefined // Also reset previous user data
       }
     case 'DARK_MODE': {
       const darkMode = action?.darkMode ?? action?.payload
       localStorageSet('darkMode', darkMode)
       return {
         ...state,
-        darkMode,
+        darkMode
       }
     }
     default:
