@@ -8,7 +8,7 @@ import { useAppStore } from '../../appContext'
 import TopBar from '../../components/TopBar'
 import { ErrorBoundary } from '../../components'
 
-const TITLE_PRIVATE = `Itinerary Planner`
+const TITLE_PRIVATE = `Draw from 3 Words`
 
 const useStyles = makeStyles((theme: Theme) => ({
   root: {

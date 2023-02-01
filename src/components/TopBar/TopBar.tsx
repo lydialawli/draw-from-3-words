@@ -2,7 +2,7 @@ import clsx from 'clsx'
 import { useCallback } from 'react'
 import { Theme, AppBar, Toolbar, Typography, Grid, Tooltip, Switch } from '@mui/material'
 import makeStyles from '@mui/styles/makeStyles'
-import { DeliveryDiningTwoTone as DeliveryIcon } from '@mui/icons-material'
+import { Brush as BrushIcon } from '@mui/icons-material'
 import { useAppStore } from '../../appContext/AppStore'
 import { Brightness1, Nightlight } from '@mui/icons-material'
 
@@ -64,7 +64,7 @@ const TopBar: React.FC<Props> = ({
     <AppBar {...restOfProps} className={clsx(classes.root, className)} component="div">
       <Toolbar className={classes.toolbar} disableGutters>
         <Grid container alignItems="center">
-          <DeliveryIcon color="primary" />
+          <BrushIcon color="primary" />
           <Typography variant="h6" className={classes.title}>
             {title}
           </Typography>

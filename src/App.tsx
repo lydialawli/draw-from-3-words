@@ -1,6 +1,6 @@
 import { AppStore } from './appContext'
 import { Route, Switch, BrowserRouter, Redirect } from 'react-router-dom'
-import { Welcome, About, NotFound, Home } from './pages'
+import { Welcome, About, Home } from './pages'
 import { PrivateLayout } from './routes/Layout'
 
 import { ErrorBoundary } from './components'
@@ -23,7 +23,6 @@ const App = () => {
                   <Route exact path="/">
                     <Redirect to="/dashboard" />
                   </Route>
-                  <Route path="/dashboard/:shopId?" exact component={Home} />
                   <Route path="/welcome" component={Welcome} />
                   <Route path="/about" component={About} />,
                   <Route component={Home} />
